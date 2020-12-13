@@ -53,6 +53,9 @@ def page_player():
 def error():
     return render_template("error.html")
 
+@app.route("/center_flex", methods=["POST","GET"])
+def center_flex():
+    return render_template("center_flex.html")
 
 @app.route("/", methods=["POST","GET"])
 def center():

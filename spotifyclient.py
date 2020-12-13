@@ -59,6 +59,7 @@ def create_playlist2(playlist_name):
             }
         )
     response_json = response.json()
+    print(response_json)
     playlist_id = response_json["id"]
         # create playlist from the class in playlist.py
     #playlist = Playlist(playlist_name, playlist_id)

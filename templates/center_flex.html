@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang='en'>
+<html style="background-color: hsl(0, 0%, 4%);margin: 0; height: 100%; overflow: hidden">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Tutorial</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <link rel="stylesheet" href="styles/debug.css">
+  </head>
+
+<style>
+
+
+.custom-select1 {
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 6.5px;
+  border-color: rgb(248, 150, 61);
+  background-color: rgb(248, 150, 61);
+  text-align-last:center;
+  width:100%;
+
+}
+
+.custom-select2 {
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 6.5px;
+  border-color: rgb(241, 31, 80);
+  background-color: rgb(241, 31, 80);
+  text-align-last:center;
+  width:100%;
+
+}
+
+.custom-select3 {
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 6.5px;
+  border-color: rgb(230, 231, 125);
+  background-color: rgb(230, 231, 125);
+  text-align-last:center;
+  width:100%;
+
+}
+
+.custom-select4 {
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 6.5px;
+  border-color: rgb(42, 198, 185);
+  background-color: rgb(42, 198, 185);
+  text-align-last:center;
+  width:100%;
+
+}
+
+ .input-select {
+  font-family: Helvetica;
+  font-size: 12px;
+  padding: 6.5px;
+  border-color: rgb(101, 43, 117);
+  background-color: rgb(101, 43, 117);
+  text-align-last:center
+  width:100%;
+
+}
+
+.body { 
+  background-color: black; 
+  width:100%;
+  height: 300vh; }
+
+
+.custom-button {
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6.5px;
+  border-color: rgb(248, 247, 222);
+  background-color: rgb(248, 247, 222);
+  text-align-last:center;
+  width:100%;
+
+}
+
+.image-select {
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+
+}
+
+.card-heading {
+  color: rgb(248, 247, 222);
+  font-family: Helvetica;
+  font-weight: bold;
+  width:100%;
+}
+
+.card-subheading {
+  color: rgb(248, 247, 222);
+  font-weight: lighter;
+  font-family: Helvetica;
+  width:100%;
+}
+
+.columns {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 100%;
+  padding: 50px;
+}
+
+.flex-nav ul {
+  border:1px solid rgb(248, 247, 222);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-basis: 100%;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.flex-nav li {
+  flex:1;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+.body {
+  background-color: black;
+}
+
+.flex-nav .social {
+  flex:1;
+}
+
+.image-foot {
+  align-items: right;
+}
+
+
+
+@media all and (max-width:1000px) {
+
+  .flex-nav ul{
+    flex-wrap:wrap;
+    align-self: baseline;
+  }
+
+  .flex-nav li {
+    flex:1 1 50%;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .flex-nav .social {
+    flex:1 1 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media all and (max-width: 500px) {
+
+  .flex-nav li {
+    flex-basis:100%;
+  }
+
+}
+
+
+</style>
+
+<body>
+  <section class = "hero is-fullheight has-background-black">
+    <div class="hero-body is-right has-background-black">
+      <figure class="image-select right has-background-black">
+        <img src="static/peaklogo_2.png" >
+        <h3 class="card-heading has-text-centered" >Gain control over your music recommendations and get the DJ-set experience</h3>
+        <h2 class="card-subheading has-text-centered">What are you in the mood for? &emsp;&emsp; How much time do you have?</h2>
+        <h2 class="card-heading has-text-centered">Choose below!</h2>
+      </figure>
+    </div>
+    <div class="wrapper">
+    <nav class="flex-nav">
+      <ul>
+        <li>
+          <select class="custom-select1 is-medium has-text-black" name="genre" id="genre-select">
+            <div class="dropdown-content">
+                <option value="" disabled selected>Mood</option>
+              {% for genre in genres %}
+                <option {{genre}}>{{genre.capitalize()}}</option>
+              {% endfor %}
+            </div>
+          </select>
+        </li>
+        <li>
+          <select class="custom-select2 is-medium has-text-black" name="genre" id="genre-select">
+            <div class="dropdown-content">
+                <option value="" disabled selected>Decade</option>
+              {% for decade in decades %}
+                <option {{genre}}>{{decade.capitalize()}}</option>
+              {% endfor %}
+            </div>
+          </select>
+        </li>
+        <li>
+          <select class="custom-select3 is-medium has-text-black" name="genre" id="genre-select">
+            <div class="dropdown-content">
+                <option value="" disabled selected>Popularity</option>
+              {% for popularity in popularities %}
+                <option value="{{decade}}">{{popularity.capitalize()}}</option>
+              {% endfor %}
+            </div>
+          </select>
+        </li>
+        <li>
+          <select class="custom-select4 is-medium has-text-black" name="genre" id="genre-select">
+            <div class="dropdown-content">
+                <option value="" disabled selected>Time</option>
+              {% for length in lengths %}
+                <option value="{{decade}}">{{length.capitalize()}}</option>
+              {% endfor %}
+            </div>
+          </select>
+        </li>
+        <li class="insert">
+          <div class="field is-active column is-black">
+            <input class="input-select has-text-centered has-text-black" type="text" placeholder="Name it" name="playlist_name">
+          </div>
+        </li>
+        <li class="create">
+          <div class="column is-active is-active">
+            <input class="custom-button is-normal has-text-black is-outlined" type="submit" value="Create it">
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class='hero-foot is-level-right'>
+       <a href="https://www.lewagon.com" target="_blank">
+          <figure class="image-foot">
+            <img src="static/logo_lewagon_red.png" alt="" width=20>
+            <img src="static/lewagon_white.png" alt="" width=60>
+          </figure>
+        </a>
+    </div>
+  </section>
+</div>
+</body>
+</html>
