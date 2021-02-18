@@ -4,7 +4,7 @@
 - Data Source: Spotify API/Heroku
 
 
-## Splash screen
+## The app
 
 
 ### Choose your parameters on the Heroku website
