@@ -9,9 +9,9 @@
 
 ### Choose your parameters on the Heroku website
 
-![alt text](../screenshots/main.png)
+![alt text](/screenshots/main.png)
 
 ### Listen to playlist on site or Spotify
 
-![alt text](../screenshots/playlist.png)
+![alt text](/screenshots/playlist.png)
 
