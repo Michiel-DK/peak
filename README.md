@@ -1,70 +1,17 @@
-# Data analysis
-- Document here the project: peak
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+# Peak
 
-Please document the project the better you can.
+- Description: A music recommendation system which uses the Spotify database to generate a playlist. Specify your desired parameters like genre and decade. The k-nearest-neighbours algorithm will generate a playlist of the desired length and post it on our Spotify account.
+- Data Source: Spotify API/Heroku
 
-# Stratup the project
 
-The initial setup.
+## Splash screen
 
-Create virtualenv and install the project:
-```bash
-  $ sudo apt-get install virtualenv python-pip python-dev
-  $ deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
 
-Unittest test:
-```bash
-  $ make clean install test
-```
+### Choose your parameters on the Heroku website
 
-Check for peak in gitlab.com/{group}.
-If your project is not set please add it:
+![alt text](../screenshots/main.png)
 
-- Create a new project on `gitlab.com/{group}/peak`
-- Then populate it:
+### Listen to playlist on site or Spotify
 
-```bash
-  $ ##   e.g. if group is "{group}" and project_name is "peak"
-  $ git remote add origin git@gitlab.com:{group}/peak.git
-  $ git push -u origin master
-  $ git push -u origin --tags
-```
+![alt text](../screenshots/playlist.png)
 
-Functionnal test with a script:
-```bash
-  $ cd /tmp
-  $ peak-run
-```
-# Install
-Go to `gitlab.com/{group}/peak` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-```bash
-  $ sudo apt-get install virtualenv python-pip python-dev
-  $ deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-```bash
-  $ git clone gitlab.com/{group}/peak
-  $ cd peak
-  $ pip install -r requirements.txt
-  $ make clean install test                # install and test
-```
-Functionnal test with a script:
-```bash
-  $ cd /tmp
-  $ peak-run
-``` 
-
-# Continus integration
-## Github 
-Every push of `master` branch will execute `.github/workflows/pythonpackages.yml` docker jobs.
-## Gitlab
-Every push of `master` branch will execute `.gitlab-ci.yml` docker jobs.
